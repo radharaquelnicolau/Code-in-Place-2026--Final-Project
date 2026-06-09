@@ -1,9 +1,9 @@
 # Code in Place 2026 Final Project
-###### Unolingo
+###### Unolingua
 
-For the Code in Place 2026 Final Project, I will be submitting **UNOLINGO** which is very much a Duolingo dupe. Inspired by the quizlet exercise of week 6.
+For the Code in Place 2026 Final Project, I will be submitting **UNOLINGUA** which is very much a Duolingo dupe. Inspired by the quizlet exercise of week 6.
 
-## so what really IS Unolingo?
+## so what really IS Unolingua?
 So Unolingo is currently a *python command program* that teaches the basic **Portuguese(mainly from Portugal)**. You will learn the most basic vocabulary needed to qualify for A1 Portuguese. You will learn:
 1. Greetings and Farewell
 2. Numbers and Dates
