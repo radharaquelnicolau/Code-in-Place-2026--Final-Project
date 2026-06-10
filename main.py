@@ -20,8 +20,9 @@ import locations_and_shopping
 import common_phrases
 #these imports are the different language modules have the different exercise types for each module, they will be used to create the different exercises for the user to practice and learn the language.
 def main():
-    greetings_and_farewell.g_multiple_choice()
-    greetings_and_farewell.f_multiple_choice()
-
+    #greetings_and_farewell.g_multiple_choice()
+    #greetings_and_farewell.f_multiple_choice()
+    #greetings_and_farewell.gf_fill_in_the_blanks()
+    greetings_and_farewell.gf_match_the_word()
 if __name__ == "__main__":
     main()
