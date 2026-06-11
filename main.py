@@ -24,5 +24,6 @@ def main():
     #greetings_and_farewell.f_multiple_choice()
     #greetings_and_farewell.gf_fill_in_the_blanks()
     greetings_and_farewell.gf_match_the_word()
+    greetings_and_farewell.gf_build_a_sentence()
 if __name__ == "__main__":
     main()

@@ -6,18 +6,16 @@ import random
 from tabulate import tabulate 
 #imports function that allows you to draw tables in terminal
 greetings = {
-    "hello" : "ola",
+    "hello" : "Olá",
     "hi" : "oi",
     "good morning" : "bom dia",
     "good afternoon" : "boa tarde",
-    "good evening" : "boa noite",
+    "good evening/night" : "boa noite",
     "how are you?" : "como estás?",
-    "I'm fine, thank you." : "estou bem, obrigado.",
+    "I'm fine, thank you" : "Estou bem, obrigado"
 }
 #dictionary for greetings in portuguese
-
 farewell = {
-    "goodbye" : "adeus",
     "goodbye" : "tchau",
     "see you later" : "até logo",
     "see you tomorrow" : "até amanhã",
@@ -71,7 +69,7 @@ def f_multiple_choice():
         print(f"Wrong! The correct answer is '{portuguese_farewell}'.")
 """ Fill in the blanks exercise for both greetings and farewells (gf)"""
 def gf_fill_in_the_blanks():
-    sentences = {
+    incomplete_sentences = {
         "_________ estás?" : "como",
         "_________ dia, como estás?" : "bom",
         "Oi, _______ _______, obrigado" : "estou bem",
@@ -83,9 +81,9 @@ def gf_fill_in_the_blanks():
         "________ logo!" : "até",
     }
     #dictionary of the incomplete sentences with the values being the correct answer to the incomplete sentence
-    incomplete_sentence = random.choice(list(sentences.keys()))
+    incomplete_sentence = random.choice(list(incomplete_sentences.keys()))
     #selects a random incomplete sentence from the dictionary to be used for the fill in the blank exercise
-    correct_answer = sentences[incomplete_sentence]
+    correct_answer = incomplete_sentences[incomplete_sentence]
     #saves the correct answer to the incomplete sentence to be used for checking the user's answer
     print(f"Fill in the blank: '{incomplete_sentence}'")
     answer = input("Enter your answer: ")
@@ -121,22 +119,39 @@ def gf_match_the_word():
     random.shuffle(english_words)
     random.shuffle(portuguese_words)
     #shuffles both english and portuguese lists so that the words and the answers are not together
-    complete_list = list(zip(english_words, portuguese_words))
-    #combines the english and portuguese lists into a list of tuples to be used for the match the word exercise
     headers = ["English", "Portuguese"]
     #headers for the table
-    print(tabulate(complete_list, headers=headers, tablefmt="simple_grid"))
+    print(tabulate(list(zip(english_words, portuguese_words)), headers=headers, tablefmt="simple_grid"))
     #prints table using complete list data
-    print("Match the english word to the portuguese word")
-    for i in range(5):
-        english_answer = input("Enter the English word: ")
-        portuguese_answer = input("Enter the Portuguese word: ")
+    print("Match the english words to the portuguese words. Please type carefully as the spelling matters!")
+    for word in english_words:
+        portuguese_answer = input(f"{word}: ")
         #asks users to write the pair of both english and portuguese words
-        if (english_answer, portuguese_answer) == (english_answer, greetings[english_answer]):
+        if portuguese_answer == greetings.get(word) or portuguese_answer == farewell.get(word):
             #checks if the pair is correct based on the greetings dictionary
             print("Correct!")
-        elif (english_answer, portuguese_answer) == (english_answer, farewell[english_answer]):
-            #checks if the pair is correct based on the farewell dictionary
-            print("Correct!")
         else:
-            print(f"Wrong! The pair was {english_answer} and {greetings.get(english_answer) or farewell.get(english_answer)}.")
+            print(f"Wrong! The pair was {word} and {greetings.get(word) or farewell.get(word)}.")
+""" Build a Sentence exercise for both greetings and farewells (gf)"""
+def gf_build_a_sentence():
+    sentences = {
+        "good morning, how are you?" : "bom dia, como estás",
+        "hello, I am fine, thank you" : "olá, estou bem, obrigado",
+        "good afternoon, see you soon!" : "boa tarde, até logo!",
+        "goodbye, have a nice day" : "tchau, tenha um bom dia",
+        "good night, see you tomorrow" : "boa noite, até amanhã",
+        "I am fine, thank you and you?" : "estou bem, obrigada, e você?"
+    }
+    #dictionary of the  sentences with the values being the correct translation to the sentence
+    sentence = random.choice(list(sentences.keys()))
+    #selects a random incomplete sentence from the dictionary to be used for the fill in the blank exercise
+    correct_answer = sentences[sentence]
+    #saves the correct answer to the sentence to be used for checking the user's answer
+    print(f"Translate this to portuguese: {sentence}'")
+    answer = input("Enter your answer: ")
+    #asks the user to fill in the blank and saves their answer to be checked against the correct answer
+    if answer == correct_answer:
+        #checks if the user's answer is correct by comparing it to the correct answer saved from the dictionary
+        print("Correct!")
+    else:
+        print(f"Wrong! The correct answer is '{correct_answer}'.")
