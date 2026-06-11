@@ -3,6 +3,8 @@ This is the greetings and farewells module of Unolingua. This module contains th
 """
 import random
 #random is used to randomize which word in the dictionary is being tested for this module
+from tabulate import tabulate 
+#imports function that allows you to draw tables in terminal
 greetings = {
     "hello" : "ola",
     "hi" : "oi",
@@ -22,7 +24,7 @@ farewell = {
     "have a nice day" : "tenha um bom dia",
 }   
 #dictionary for farewells in portuguese
-
+""" Greetings(g) Multiple Choice Exercise"""
 def g_multiple_choice():
     english_greeting = random.choice(list(greetings.keys()))
     #selects a random word from the dictionary in english
@@ -45,7 +47,7 @@ def g_multiple_choice():
         print("Correct!")
     else:
         print(f"Wrong! The correct answer is '{portuguese_greeting}'.")
-
+""" Farewell(f) Multiple Choice Exercise"""
 def f_multiple_choice():
     english_farewell = random.choice(list(farewell.keys()))
     #selects a random word from the dictionary in english
@@ -67,7 +69,7 @@ def f_multiple_choice():
         print("Correct!")
     else:
         print(f"Wrong! The correct answer is '{portuguese_farewell}'.")
-
+""" Fill in the blanks exercise for both greetings and farewells (gf)"""
 def gf_fill_in_the_blanks():
     sentences = {
         "_________ estás?" : "como",
@@ -93,20 +95,48 @@ def gf_fill_in_the_blanks():
         print("Correct!")
     else:
         print(f"Wrong! The correct answer is '{correct_answer}'.")
-
+""" Match the word exercise for both greetings and farewells (gf)"""
 def gf_match_the_word():
-    english_words = list(greetings.keys()) + list(farewell.keys())
-    portuguese_words = list(greetings.values()) + list(farewell.values())
-    #creates a list of all the english words and all the portuguese words from both the greetings and farewells dictionaries to be used for the match the word exercise
+    big_english_words_list = list(greetings.keys()) + list(farewell.keys())
+    #makes a big list with all the english words from both dictionaries
+    english_words = []
+    #empty list to add the five words that will be used for this exercise
+    random.shuffle(big_english_words_list)
+    #shuffles the big list to increase randomness of chosen words
+    for i in range(5):
+        word = random.choice(big_english_words_list)
+        #saves randomly chosen word in a variable
+        english_words.append(word)
+        #adds word to the llist that will be used for the exercise
+        big_english_words_list.remove(word)
+        #removes word from the big word list to avoid repition
+    portuguese_words = []
+    #empty list that will contain the correct answers
+    for word in english_words:
+        if word in greetings:
+            portuguese_words.append(greetings[word])
+        else:
+            portuguese_words.append(farewell[word])
+    #for loop checks each word in the english list and adds portuguese translation based on which dictionary the word is in
     random.shuffle(english_words)
     random.shuffle(portuguese_words)
-    #shuffles both lists so that the correct answers are not always in the same position
-    print("Match the English word with its Portuguese translation:")
-    for i, english_word in enumerate(english_words):
-        print(f"{i + 1}. {english_word}")
-        #prints out all the english words numbered through enumerate(english_words)
-        #the i + 1 is to make sure that the options are correctly numbered starting from 1 instead of 0
-    for j, portuguese_word in enumerate(portuguese_words):
-        print(f"{j + 1}. {portuguese_word}")
-        #prints out all the portuguese words numbered through enumerate(portuguese_words)
-        #the j + 1 is to make sure that the options are correctly numbered starting from 1 instead of 0
+    #shuffles both english and portuguese lists so that the words and the answers are not together
+    complete_list = list(zip(english_words, portuguese_words))
+    #combines the english and portuguese lists into a list of tuples to be used for the match the word exercise
+    headers = ["English", "Portuguese"]
+    #headers for the table
+    print(tabulate(complete_list, headers=headers, tablefmt="simple_grid"))
+    #prints table using complete list data
+    print("Match the english word to the portuguese word")
+    for i in range(5):
+        english_answer = input("Enter the English word: ")
+        portuguese_answer = input("Enter the Portuguese word: ")
+        #asks users to write the pair of both english and portuguese words
+        if (english_answer, portuguese_answer) == (english_answer, greetings[english_answer]):
+            #checks if the pair is correct based on the greetings dictionary
+            print("Correct!")
+        elif (english_answer, portuguese_answer) == (english_answer, farewell[english_answer]):
+            #checks if the pair is correct based on the farewell dictionary
+            print("Correct!")
+        else:
+            print(f"Wrong! The pair was {english_answer} and {greetings.get(english_answer) or farewell.get(english_answer)}.")
