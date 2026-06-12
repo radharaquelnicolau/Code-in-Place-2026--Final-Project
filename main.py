@@ -23,7 +23,6 @@ def main():
     #greetings_and_farewell.g_multiple_choice()
     #greetings_and_farewell.f_multiple_choice()
     #greetings_and_farewell.gf_fill_in_the_blanks()
-    greetings_and_farewell.gf_match_the_word()
-    greetings_and_farewell.gf_build_a_sentence()
+    greetings_and_farewell.gf_lesson_plan()
 if __name__ == "__main__":
     main()
