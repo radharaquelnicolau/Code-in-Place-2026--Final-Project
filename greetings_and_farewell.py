@@ -5,6 +5,8 @@ import random
 #random is used to randomize which word in the dictionary is being tested for this module
 from tabulate import tabulate 
 #imports function that allows you to draw tables in terminal
+import config
+#imports scores, lives and functionality into the module and main
 greetings = {
     "hello" : "olá",
     "hi" : "oi",
@@ -160,24 +162,17 @@ def gf_lesson_plan():
     print("Welcome to our first lesson!")
     print("In this lesson, we will be learning about common greetings and farewells in Portuguese.")
     #introduces the user to the first lesson of unolingua
-    enter_to_continue()
+    config.enter_to_continue()
     #function to make sure that only by pressing enter, will the user continue
     print("Here are the most common greetings in Portuguese:")
     for english, portuguese in greetings.items():
         print(f"{english} : {portuguese}")
         #prints each english word with is portuguese translation
-        enter_to_continue()
+        config.enter_to_continue()
         #ensures that next word only shows when pressed enter
     print("And here are the most common farewells in Portuguese:")
     for english, portuguese in farewell.items():
         print(f"{english} : {portuguese}")
-        enter_to_continue()
+        config.enter_to_continue()
     print("Now let's practice what we have learned with some exercises!")
 """ Press enter function """    
-def enter_to_continue():
-    while True:
-        user_input = input("Press [ENTER] to continue")
-        if user_input == "":
-            break
-        print("Please press [ENTER] to continue.")
-    #while loop serves as a way to make sure that only when the user presses enter will the program continue
