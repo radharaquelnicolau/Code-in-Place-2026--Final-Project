@@ -10,21 +10,33 @@ from tabulate import tabulate
 import config
 #imports scores, lives and functionality into the module and main
 numbers = {
-    "hello" : "olá",
-    "hi" : "oi",
-    "good morning" : "bom dia",
-    "good afternoon" : "boa tarde",
-    "good evening/night" : "boa noite",
-    "how are you?" : "como estás?",
-    "I'm fine, thank you, and you?" : "estou bem, obrigado, e você?"
+    "one" : "um",
+    "two" : "dois",
+    "three" : "três",
+    "four" : "quatro",
+    "five" : "cinco",
+    "six" : "seis",
+    "seven" : "sete",
+    "eight" : "oito",
+    "nine" : "nove",
+    "ten" : "dez",
 }
 #dictionary for numbers in portuguese
 dates = {
-    "goodbye" : "tchau",
-    "see you later" : "até logo",
-    "see you tomorrow" : "até amanhã",
-    "have a nice day" : "tenha um bom dia",
-}   
+    "today" : "hoje",
+    "tomorrow" : "amanhã",
+    "yesterday" : "ontem",
+    "monday" : "segunda-feira",
+    "tuesday" : "terça-feira",
+    "wednesday" : "quarta-feira",
+    "thursday" : "quinta-feira",
+    "friday" : "sexta-feira",
+    "saturday" : "sábado",
+    "sunday" : "domingo",
+    "weekend" : "fim de semana",
+    "weekday" : "meio de semana",
+}
+
 #dictionary for dates in portuguese
 """Numbers(n) Multiple Choice Exercise"""
 def n_multiple_choice():
@@ -52,7 +64,7 @@ def n_multiple_choice():
         config.user_lives -= 1
         print(f"Unfortunately, that is incorrect. The correct answer is '{portuguese_numbers
 }'. You now have {config.user_lives} lives and {config.user_xp}xp.")
-""" dates(f) Multiple Choice Exercise"""
+"""Dates(f) Multiple Choice Exercise"""
 def d_multiple_choice():
     english_dates = random.choice(list(dates.keys()))
     #selects a random word from the dictionary in english
@@ -76,18 +88,18 @@ def d_multiple_choice():
     else:
         config.user_lives -= 1
         print(f"Unfortunately, that is incorrect. The correct answer is '{portuguese_dates}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
-""" Fill in the blanks exercise for both numbers and datess (nd)"""
+""" Fill in the blanks exercise for both numbers and dates (nd)"""
 def nd_fill_in_the_blanks():
     incomplete_sentences = {
-        "____ estás?" : "como",
-        "___ dia, como estás?" : "bom",
-        "oi, _____ ___, obrigado" : "estou bem",
-        "___ tarde, até logo!" : "boa",
-        "_____, tenha um bom dia" : "tchau",
-        "___ noite, até amanhã!" : "boa",
-        "tenha um ___ ___" : "bom dia",
-        "estou bem, ________": "obrigado",
-        "___ logo!" : "até",
+        "___ de semana" : "fim",
+        "meio de ______" : "semana",
+        "até ______!" : "amanhã",
+        "segunda-_____" : "feira",
+        "__ça-feira" : "ter",
+        "sá____": "bado",
+        "___co" : "cinco",
+        "__, dois, três" : "um",
+        "____ sete" : "seis"
     }
     #dictionary of the incomplete sentences with the values being the correct answer to the incomplete sentence
     incomplete_sentence = random.choice(list(incomplete_sentences.keys()))
@@ -152,12 +164,12 @@ def nd_match_the_word():
 """ Build a Sentence exercise for both numbers and datess (nd)"""
 def nd_build_a_sentence():
     sentences = {
-        "good morning, how are you?" : "bom dia, como estás",
-        "hello, I am fine, thank you" : "olá, estou bem, obrigado",
+        "I am good today" : "estou bem hoje",
+        "weekday" : "meio de semana",
         "good afternoon, see you soon!" : "boa tarde, até logo!",
-        "goodbye, have a nice day" : "tchau, tenha um bom dia",
-        "good night, see you tomorrow" : "boa noite, até amanhã",
-        "I am fine, thank you and you?" : "estou bem, obrigada, e você?"
+        "yesterday" : "ontem",
+        "good night, see you on wednesday" : "boa noite, até quarta-feira",
+        "six seven" : "seis sete"
     }
     #dictionary of the  sentences with the values being the correct translation to the sentence
     sentence = random.choice(list(sentences.keys()))
