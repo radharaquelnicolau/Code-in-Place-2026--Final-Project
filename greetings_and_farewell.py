@@ -1,6 +1,8 @@
 """
 This is the greetings and farewells module of Unolingua. This module contains the dictionary with all the greetings and farewells, the different exercises and the different lesson plan for the greetings and farewells will be written. 
 """
+broken_loop = False
+#variable that verifies whether the loop for the match the word game has broken so that the game can end
 import random
 #random is used to randomize which word in the dictionary is being tested for this module
 from tabulate import tabulate 
@@ -142,6 +144,10 @@ def gf_match_the_word():
         else:
             config.user_lives -= 1
             print(f"Unfortunately that is not correct. The correct answer is '{greetings.get(word) or farewell.get(word)}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
+            if config.user_lives == 0:
+                broken_loop = True
+                break
+            #if loops check for whether the lives have finished and then changes the broken loop to true and breaks the loop
 """ Build a Sentence exercise for both greetings and farewells (gf)"""
 def gf_build_a_sentence():
     sentences = {
@@ -169,7 +175,7 @@ def gf_build_a_sentence():
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Lesson plan for greetings and farewells (gf)"""
 def gf_lesson_plan():
-    print("Welcome to our first lesson!")
+    print("Now let's start with our first lesson!")
     print("In this lesson, we will be learning about common greetings and farewells in Portuguese.")
     #introduces the user to the first lesson of unolingua
     config.enter_to_continue()
@@ -192,5 +198,7 @@ def gf_lesson_plan():
     config.enter_to_continue()
     print("Note: there are two forms of saying goodbye in Portuguese: 'tchau' and 'adeus'. 'Tchau' is for when you know you are meeting the person again while 'adeus' is for when you don't know if you are meeting the person again")
     config.enter_to_continue()
-    print("Now let's practice what we have learned with some exercises!")
+    print("Now let's practice what we have learned with some exercises! Please be mindful of the following:")
+    print("Please make sure that your answers are all in lowercase and that you don't leave any space (except between words) when answering")
+    print("Please make sure that your keyboard can allow you to type with accents such as á and ã. Many answers require these and it is important for you to be able to type in order to not get flagged as a wrong answer. Additionally not writing with the accents is considered a spelling mistake so it helps you learn the different accents used in basic everyday language.")
     config.enter_to_continue()

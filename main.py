@@ -25,31 +25,39 @@ def main():
     print("Welcome to Unoligua, the language learning game! In this game, you will be able to practice and learn a new language through various exercises and activities. You will earn points for completing exercises and lose lives for making mistakes. The goal is to earn as many points as possible while keeping your lives intact. Let's get started!")
     print("Unolingua will be teaching you Portuguese, a beautiful and widely spoken language originating from Portugal. Portuguese is the official language of 9 different countries, with the biggest population of native Portuguese speakers being in Brazil, Angola and Portugal. It is a Romance language that evolved from Latin and has many similarities to Spanish and Italian. Learning Portuguese will open up a world of opportunities for you, whether it's for travel, work, or simply to connect with people from different cultures. Let's dive into the first lesson and start learning Portuguese together!")
     print(f"Before we start, you will receive experience(xp) points based on how well you do on each exercise and the type of exercise it is. You will also have 5 lives, and you will lose a life for each mistake you make. If you lose all your lives, the lesson will start over. So, make sure to pay attention and do your best to earn as many points as possible while keeping your lives intact. Good luck and have fun learning Portuguese with Unoligua!")
-    while config.user_lives != 0:
+    greetings_and_farewell_lesson()
+"""     while True:
         greetings_and_farewell.gf_lesson_plan()
         gf_exercise_list = [greetings_and_farewell.g_multiple_choice, greetings_and_farewell.f_multiple_choice, greetings_and_farewell.gf_fill_in_the_blanks, greetings_and_farewell.gf_fill_in_the_blanks, greetings_and_farewell.gf_match_the_word, greetings_and_farewell.gf_build_a_sentence, greetings_and_farewell.gf_build_a_sentence]
         random.shuffle(gf_exercise_list)
         for exercise in gf_exercise_list:
             exercise()
             config.enter_to_continue()
-            if config.user_lives == 0:
+            if config.user_lives == 0 or greetings_and_farewell.broken_loop == True:
                 print("You have lost all your lives. The lesson will now start over. Don't worry, you can do it! Just pay attention and try your best to earn points while keeping your lives intact. Good luck!")
+                config.user_lives = 5
                 break
-    print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp and have {config.user_lives} lives remaining.")
+        else:
+            break
+    print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp and have {config.user_lives} lives remaining.") """
 
 
-    """ greetings_and_farewell.gf_lesson_plan()
-    greetings_and_farewell.g_multiple_choice()
-    config.enter_to_continue()
-    greetings_and_farewell.f_multiple_choice()
-    config.enter_to_continue()
-    greetings_and_farewell.gf_fill_in_the_blanks()
-    config.enter_to_continue()
-    greetings_and_farewell.gf_match_the_word()
-    config.enter_to_continue()
-    greetings_and_farewell.gf_build_a_sentence()
-     """
-
+def greetings_and_farewell_lesson():
+    while True:
+        greetings_and_farewell.gf_lesson_plan()
+        gf_exercise_list = [greetings_and_farewell.g_multiple_choice, greetings_and_farewell.f_multiple_choice, greetings_and_farewell.gf_fill_in_the_blanks, greetings_and_farewell.gf_fill_in_the_blanks, greetings_and_farewell.gf_match_the_word, greetings_and_farewell.gf_build_a_sentence, greetings_and_farewell.gf_build_a_sentence]
+        random.shuffle(gf_exercise_list)
+        for exercise in gf_exercise_list:
+            exercise()
+            config.enter_to_continue()
+            if config.user_lives == 0 or greetings_and_farewell.broken_loop == True:
+                print("You have lost all your lives. The lesson will now start over. Don't worry, you can do it! Just pay attention and try your best to earn points while keeping your lives intact. Good luck!")
+                config.user_lives = 5
+                break
+        else:
+            break
+        print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp and have {config.user_lives} lives remaining.")
+    
 
 if __name__ == "__main__":
     main()
