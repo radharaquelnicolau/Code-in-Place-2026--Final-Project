@@ -23,26 +23,36 @@ import common_phrases
 #these imports are the different language modules have the different exercise types for each module, they will be used to create the different exercises for the user to practice and learn the language.
 def main():
     print("Welcome to Unoligua, the language learning game! In this game, you will be able to practice and learn a new language through various exercises and activities. You will earn points for completing exercises and lose lives for making mistakes. The goal is to earn as many points as possible while keeping your lives intact. Let's get started!")
+    config.enter_to_continue()
     print("Unolingua will be teaching you Portuguese, a beautiful and widely spoken language originating from Portugal. Portuguese is the official language of 9 different countries, with the biggest population of native Portuguese speakers being in Brazil, Angola and Portugal. It is a Romance language that evolved from Latin and has many similarities to Spanish and Italian. Learning Portuguese will open up a world of opportunities for you, whether it's for travel, work, or simply to connect with people from different cultures. Let's dive into the first lesson and start learning Portuguese together!")
-    print(f"Before we start, you will receive experience(xp) points based on how well you do on each exercise and the type of exercise it is. You will also have 5 lives, and you will lose a life for each mistake you make. If you lose all your lives, the lesson will start over. So, make sure to pay attention and do your best to earn as many points as possible while keeping your lives intact. Good luck and have fun learning Portuguese with Unoligua!")
+    config.enter_to_continue()
+    print("Before we start, you will receive experience(xp) points based on how well you do on each exercise and the type of exercise it is. You will also have 5 lives, and you will lose a life for each mistake you make. If you lose all your lives, the lesson will start over and you regain all your lives. So, make sure to pay attention and do your best to earn as many points as possible while keeping your lives intact. Good luck and have fun learning Portuguese with Unoligua!")
+    config.enter_to_continue()
+    # Explanatory text for Unolingua
     greetings_and_farewell_lesson()
-
 
 def greetings_and_farewell_lesson():
     while True:
+        #ensures that this loops repeats when you lose all lives
         greetings_and_farewell.gf_lesson_plan()
+        #displays gf lesson plan first
         gf_exercise_list = [greetings_and_farewell.g_multiple_choice, greetings_and_farewell.f_multiple_choice, greetings_and_farewell.gf_fill_in_the_blanks, greetings_and_farewell.gf_fill_in_the_blanks, greetings_and_farewell.gf_match_the_word, greetings_and_farewell.gf_build_a_sentence, greetings_and_farewell.gf_build_a_sentence]
+        #list of all functions being used so that the functions can be shuffled and not used in order
         random.shuffle(gf_exercise_list)
+        #shuffles the list so that functions are not in the same order as in the module file
         for exercise in gf_exercise_list:
             exercise()
             config.enter_to_continue()
+            #for loop runs through all the functions in the list
             if config.user_lives == 0 or greetings_and_farewell.broken_loop == True:
                 print("You have lost all your lives. The lesson will now start over. Don't worry, you can do it! Just pay attention and try your best to earn points while keeping your lives intact. Good luck!")
                 config.user_lives = 5
                 break
+            #if statment checks for whether the lives are finished or the break loop variable for match a word is true so that the lesson can restart
         else:
             break
-        print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp and have {config.user_lives} lives remaining.")
+        #breaks because the user has completed the exercises without losing all lives
+    print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
     
 
 if __name__ == "__main__":
