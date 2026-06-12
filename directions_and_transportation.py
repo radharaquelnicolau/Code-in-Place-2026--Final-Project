@@ -1,5 +1,5 @@
 """
-This is the greetings and farewells module of Unolingua. This module contains the dictionary with all the greetings and farewells, the different exercises and the different lesson plan for the greetings and farewells will be written. 
+This is the directions and transportations module of Unolingua. This module contains the dictionary with all the directions and transportations, the different exercises and the different lesson plan for the directions and transportations will be written. 
 """
 broken_loop = False
 #variable that verifies whether the loop for the match the word game has broken so that the game can end
@@ -9,7 +9,7 @@ from tabulate import tabulate
 #imports function that allows you to draw tables in terminal
 import config
 #imports scores, lives and functionality into the module and main
-greetings = {
+directions = {
     "hello" : "olá",
     "hi" : "oi",
     "good morning" : "bom dia",
@@ -18,24 +18,24 @@ greetings = {
     "how are you?" : "como estás?",
     "I'm fine, thank you, and you?" : "estou bem, obrigado, e você?"
 }
-#dictionary for greetings in portuguese
-farewell = {
+#dictionary for directions in portuguese
+transportation = {
     "goodbye" : "tchau",
     "see you later" : "até logo",
     "see you tomorrow" : "até amanhã",
     "have a nice day" : "tenha um bom dia",
 }   
-#dictionary for farewells in portuguese
-""" Greetings(g) Multiple Choice Exercise"""
-def g_multiple_choice():
-    english_greeting = random.choice(list(greetings.keys()))
+#dictionary for transportations in portuguese
+"""Directions(d) Multiple Choice Exercise"""
+def d_multiple_choice():
+    english_direction = random.choice(list(directions.keys()))
     #selects a random word from the dictionary in english
-    portuguese_greeting = greetings[english_greeting]
+    portuguese_direction = directions[english_direction]
     #saves the portuguese translation of the selected english word
-    print(f"What is the Portuguese translation of '{english_greeting}'?")
+    print(f"What is the Portuguese translation of '{english_direction}'?")
     #ask the user to select the correct portuguese translation of the selected english word
-    options = list(greetings.values())
-    #creates a list of the portuguese translations of the greetings to be used as options for the multiple choice question
+    options = list(directions.values())
+    #creates a list of the portuguese translations of the directions to be used as options for the multiple choice question
     random.shuffle(options)
     #shuffles the options so that the correct answer is not always in the same position
     for i, option in enumerate(options):
@@ -44,23 +44,24 @@ def g_multiple_choice():
         #the i + 1 is to make sure that the options are correctly numbered starting from 1 instead of 0
     answer = int(input("Enter the number of your answer: "))
     #asks user for the number and convert the number to int value so that operations can be performed
-    if options[answer - 1] == portuguese_greeting:
+    if options[answer - 1] == portuguese_direction:
     #checks that if the number the user gave corresponds to the correct index of the portuguese translation
         config.user_xp += 5
         print(f"Correct! You now have {config.user_xp}xp! You still have {config.user_lives} lives")
     else:
         config.user_lives -= 1
-        print(f"Unfortunately, that is incorrect. The correct answer is '{portuguese_greeting}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
-""" Farewell(f) Multiple Choice Exercise"""
-def f_multiple_choice():
-    english_farewell = random.choice(list(farewell.keys()))
+        print(f"Unfortunately, that is incorrect. The correct answer is '{portuguese_direction
+}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
+""" transportation(f) Multiple Choice Exercise"""
+def t_multiple_choice():
+    english_transportation = random.choice(list(transportation.keys()))
     #selects a random word from the dictionary in english
-    portuguese_farewell = farewell[english_farewell]
+    portuguese_transportation = transportation[english_transportation]
     #saves the portuguese translation of the selected english word
-    print(f"What is the Portuguese translation of '{english_farewell}'?")
+    print(f"What is the Portuguese translation of '{english_transportation}'?")
     #ask the user to select the correct portuguese translation of the selected english word
-    options = list(farewell.values())
-    #creates a list of the portuguese translations of the farewells to be used as options for the multiple choice question
+    options = list(transportation.values())
+    #creates a list of the portuguese translations of the transportations to be used as options for the multiple choice question
     random.shuffle(options)
     for i, option in enumerate(options):
         print(f"{i + 1}. {option}")
@@ -68,15 +69,15 @@ def f_multiple_choice():
         #the i + 1 is to make sure that the options are correctly numbered starting from 1 instead of 0
     answer = int(input("Enter the number of your answer: "))
     #asks user for the number and convert the number to int value so that operations can be performed
-    if options[answer - 1] == portuguese_farewell:
+    if options[answer - 1] == portuguese_transportation:
     #checks that if the number the user gave corresponds to the correct index of the portuguese translation
         config.user_xp += 5
         print(f"Correct! You now have {config.user_xp}xp! You still have {config.user_lives} lives")
     else:
         config.user_lives -= 1
-        print(f"Unfortunately, that is incorrect. The correct answer is '{portuguese_farewell}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
-""" Fill in the blanks exercise for both greetings and farewells (gf)"""
-def gf_fill_in_the_blanks():
+        print(f"Unfortunately, that is incorrect. The correct answer is '{portuguese_transportation}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
+""" Fill in the blanks exercise for both directions and transportations (dt)"""
+def dt_fill_in_the_blanks():
     incomplete_sentences = {
         "____ estás?" : "como",
         "___ dia, como estás?" : "bom",
@@ -103,9 +104,9 @@ def gf_fill_in_the_blanks():
     else:
         config.user_lives -= 1
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
-""" Match the word exercise for both greetings and farewells (gf)"""
-def gf_match_the_word():
-    big_english_words_list = list(greetings.keys()) + list(farewell.keys())
+""" Match the word exercise for both directions and transportations (dt)"""
+def dt_match_the_word():
+    big_english_words_list = list(directions.keys()) + list(transportation.keys())
     #makes a big list with all the english words from both dictionaries
     english_words = []
     #empty list to add the five words that will be used for this exercise
@@ -121,10 +122,10 @@ def gf_match_the_word():
     portuguese_words = []
     #empty list that will contain the correct answers
     for word in english_words:
-        if word in greetings:
-            portuguese_words.append(greetings[word])
+        if word in directions:
+            portuguese_words.append(directions[word])
         else:
-            portuguese_words.append(farewell[word])
+            portuguese_words.append(transportation[word])
     #for loop checks each word in the english list and adds portuguese translation based on which dictionary the word is in
     random.shuffle(english_words)
     random.shuffle(portuguese_words)
@@ -137,19 +138,19 @@ def gf_match_the_word():
     for word in english_words:
         portuguese_answer = input(f"{word}: ")
         #asks users to write the pair of both english and portuguese words
-        if portuguese_answer == greetings.get(word) or portuguese_answer == farewell.get(word):
-            #checks if the pair is correct based on the greetings dictionary
+        if portuguese_answer == directions.get(word) or portuguese_answer == transportation.get(word):
+            #checks if the pair is correct based on the directions dictionary
             config.user_xp += 5
             print(f"Correct! You now have {config.user_xp}xp! You still have {config.user_lives} lives")
         else:
             config.user_lives -= 1
-            print(f"Unfortunately that is not correct. The correct answer is '{greetings.get(word) or farewell.get(word)}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
+            print(f"Unfortunately that is not correct. The correct answer is '{directions.get(word) or transportation.get(word)}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
             if config.user_lives == 0:
                 broken_loop = True
                 break
             #if loops check for whether the lives have finished and then changes the broken loop to true and breaks the loop
-""" Build a Sentence exercise for both greetings and farewells (gf)"""
-def gf_build_a_sentence():
+""" Build a Sentence exercise for both directions and transportations (dt)"""
+def dt_build_a_sentence():
     sentences = {
         "good morning, how are you?" : "bom dia, como estás",
         "hello, I am fine, thank you" : "olá, estou bem, obrigado",
@@ -173,15 +174,15 @@ def gf_build_a_sentence():
     else:
         config.user_lives -= 1
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
-""" Lesson plan for greetings and farewells (gf)"""
-def gf_lesson_plan():
+""" Lesson plan for directions and transportations (dt)"""
+def dt_lesson_plan():
     print("Now let's start with our first lesson!")
-    print("In this lesson, we will be learning about common greetings and farewells in Portuguese.")
+    print("In this lesson, we will be learning about common directions and transportations in Portuguese.")
     #introduces the user to the first lesson of unolingua
     config.enter_to_continue()
     #function to make sure that only by pressing enter, will the user continue
-    print("Here are the most common greetings in Portuguese:")
-    for english, portuguese in greetings.items():
+    print("Here are the most common directions in Portuguese:")
+    for english, portuguese in directions.items():
         print(f"{english} : {portuguese}")
         #prints each english word with is portuguese translation
     config.enter_to_continue()
@@ -192,8 +193,8 @@ def gf_lesson_plan():
     config.enter_to_continue()
     print("Also, there are two ways of saying you in Portuguese: 'você' and 'tu'. 'Você' is more commonly used in Brazil while 'tu' is more commonly used in Portugal. Additionally 'tu' is considered more informal while 'você' is considered more formal. For this program we will be using 'você' throughout")
     config.enter_to_continue()
-    print("And here are the most common farewells in Portuguese:")
-    for english, portuguese in farewell.items():
+    print("And here are the most common transportations in Portuguese:")
+    for english, portuguese in transportation.items():
         print(f"{english} : {portuguese}")
     config.enter_to_continue()
     print("Note: there are two forms of saying goodbye in Portuguese: 'tchau' and 'adeus'. 'Tchau' is for when you know you are meeting the person again while 'adeus' is for when you don't know if you are meeting the person again")
