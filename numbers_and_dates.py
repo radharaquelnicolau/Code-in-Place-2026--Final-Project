@@ -34,7 +34,7 @@ dates = {
     "saturday" : "sábado",
     "sunday" : "domingo",
     "weekend" : "fim de semana",
-    "weekday" : "meio de semana",
+    "weekday" : "dia de semana",
 }
 
 #dictionary for dates in portuguese
@@ -73,7 +73,7 @@ def d_multiple_choice():
     print(f"What is the Portuguese translation of '{english_dates}'?")
     #ask the user to select the correct portuguese translation of the selected english word
     options = list(dates.values())
-    #creates a list of the portuguese translations of the datess to be used as options for the multiple choice question
+    #creates a list of the portuguese translations of the dates to be used as options for the multiple choice question
     random.shuffle(options)
     for i, option in enumerate(options):
         print(f"{i + 1}. {option}")
@@ -95,9 +95,8 @@ def nd_fill_in_the_blanks():
         "meio de ______" : "semana",
         "até ______!" : "amanhã",
         "segunda-_____" : "feira",
-        "__ça-feira" : "ter",
-        "sá____": "bado",
-        "___co" : "cinco",
+        "__ lápis" : "um",
+        "dois ____": "dias",
         "__, dois, três" : "um",
         "____ sete" : "seis"
     }
@@ -161,12 +160,12 @@ def nd_match_the_word():
                 broken_loop = True
                 break
             #if loops check for whether the lives have finished and then changes the broken loop to true and breaks the loop
-""" Build a Sentence exercise for both numbers and datess (nd)"""
+""" Build a Sentence exercise for both numbers and dates (nd)"""
 def nd_build_a_sentence():
     sentences = {
         "I am good today" : "estou bem hoje",
-        "weekday" : "meio de semana",
-        "good afternoon, see you soon!" : "boa tarde, até logo!",
+        "weekday" : "dia de semana",
+        "One weekend" : "Um fim de semana",
         "yesterday" : "ontem",
         "good night, see you on wednesday" : "boa noite, até quarta-feira",
         "six seven" : "seis sete"
@@ -186,32 +185,34 @@ def nd_build_a_sentence():
     else:
         config.user_lives -= 1
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
-""" Lesson plan for numbers and datess (nd)"""
+""" Lesson plan for numbers and dates (nd)"""
 def nd_lesson_plan():
-    print("Now let's start with our first lesson!")
-    print("In this lesson, we will be learning about common numbers and datess in Portuguese.")
-    #introduces the user to the first lesson of unolingua
+    print("Welcome to our seccond lesson!")
+    print("In this lesson, we will be learning about numbers and dates in Portuguese.")
+    #introduces the user to the second lesson of unolingua
     config.enter_to_continue()
     #function to make sure that only by pressing enter, will the user continue
-    print("Here are the most common numbers in Portuguese:")
+    print("Here are numbers 1-10 in Portuguese:")
     for english, portuguese in numbers.items():
         print(f"{english} : {portuguese}")
         #prints each english word with is portuguese translation
     config.enter_to_continue()
     #ensures that next word only shows when pressed enter
-    print('Note: when someone asks "Estou bem, obrigado, e você?" you can respond with "Estou bem, obrigado"')
+    print('Note: 1 and 2 have different spellings depending on the gender of the word (in portuguese, words have gramatical gender). So for example "um lápis" (one pencil) and "uma caneta" (one pen). "um" (masculine) changes to "uma"(feminine). Another example is "dois dias" (two days) and "duas semanas" (two weeks). "dois" (masculine) changes to "duas" (feminine)')
     config.enter_to_continue()
-    print("Note: Words like 'obrigado' usually change spelling depending on the gender of who is talking. For example, if a woman is speaking, they say 'obrigada'. However for this program we will be using 'obrigado' througout")
+    print("Additionally 'um' and 'uma' also serve as indefinite articles (like a and an) in Portuguese. For example 'um rapaz' (a boy) e 'uma menina' (a girl)")
     config.enter_to_continue()
-    print("Also, there are two ways of saying you in Portuguese: 'você' and 'tu'. 'Você' is more commonly used in Brazil while 'tu' is more commonly used in Portugal. Additionally 'tu' is considered more informal while 'você' is considered more formal. For this program we will be using 'você' throughout")
+    print("Note: To spot grammatical gender in Portuguese, check the ending of each word. Feminine words usually end with an -a. Some exceptions we have learned this far are 'dia'(masculine), 'tarde'(feminine), 'noite'(feminine) and 'amanhã'(masculine)")
     config.enter_to_continue()
-    print("And here are the most common datess in Portuguese:")
+    print("And here is how you can talk about the days of the week in Portuguese:")
     for english, portuguese in dates.items():
         print(f"{english} : {portuguese}")
     config.enter_to_continue()
-    print("Note: there are two forms of saying goodbye in Portuguese: 'tchau' and 'adeus'. 'Tchau' is for when you know you are meeting the person again while 'adeus' is for when you don't know if you are meeting the person again")
+    print("Note: When speaking informally, the days of the week (Monday to Friday) are abbreviated so that instead of saying 'Segunda-feira' for Monday, you only say 'Segunda' or 'Terça' for Tuesday, so on and so forth")
+    print("Fun Fact: The literal translation of 'Segunda-feira, Terça-feira, Quarta-feira, Quinta-feira and Sexta-feira' to english is 'Second fair, third fair, fourth fair, fifth fair, and sixth fair'. The reason as to why it is like this is because a bishop, Martinho de Braga, did not like the association the days of the week had with the gods in roman culture and decided to change the names during Holy Week with the first fair starting on Sunday.")
     config.enter_to_continue()
     print("Now let's practice what we have learned with some exercises! Please be mindful of the following:")
     print("Please make sure that your answers are all in lowercase and that you don't leave any space (except between words) when answering")
+    config.enter_to_continue()
     print("Please make sure that your keyboard can allow you to type with accents such as á and ã. Many answers require these and it is important for you to be able to type in order to not get flagged as a wrong answer. Additionally not writing with the accents is considered a spelling mistake so it helps you learn the different accents used in basic everyday language.")
     config.enter_to_continue()
