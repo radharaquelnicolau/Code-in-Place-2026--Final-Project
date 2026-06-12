@@ -13,6 +13,8 @@ program and will call the other functions to run the game. The game
 """
 import random
 #random will be used to mix the different exercise types for each module currently since each module is not finished, it is currenlty not in use.
+import config
+#config keeps track of scores and lives. it also contains the press enter to continue function which will be used for functionality in all the files 
 import greetings_and_farewell
 import numbers_and_dates
 import directions_and_transportation
@@ -20,9 +22,13 @@ import locations_and_shopping
 import common_phrases
 #these imports are the different language modules have the different exercise types for each module, they will be used to create the different exercises for the user to practice and learn the language.
 def main():
-    #greetings_and_farewell.g_multiple_choice()
-    #greetings_and_farewell.f_multiple_choice()
-    #greetings_and_farewell.gf_fill_in_the_blanks()
     greetings_and_farewell.gf_lesson_plan()
+    greetings_and_farewell.g_multiple_choice()
+    greetings_and_farewell.f_multiple_choice()
+    greetings_and_farewell.gf_fill_in_the_blanks()
+    greetings_and_farewell.gf_match_the_word()
+    greetings_and_farewell.gf_build_a_sentence()
+    
+
 if __name__ == "__main__":
     main()

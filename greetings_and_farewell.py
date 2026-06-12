@@ -44,7 +44,8 @@ def g_multiple_choice():
     #asks user for the number and convert the number to int value so that operations can be performed
     if options[answer - 1] == portuguese_greeting:
     #checks that if the number the user gave corresponds to the correct index of the portuguese translation
-        print("Correct!")
+        config.user_xp += 5
+        print(f"Correct! You now have {config.user_xp}xp!")
     else:
         print(f"Wrong! The correct answer is '{portuguese_greeting}'.")
 """ Farewell(f) Multiple Choice Exercise"""
@@ -66,7 +67,8 @@ def f_multiple_choice():
     #asks user for the number and convert the number to int value so that operations can be performed
     if options[answer - 1] == portuguese_farewell:
     #checks that if the number the user gave corresponds to the correct index of the portuguese translation
-        print("Correct!")
+        config.user_xp += 5
+        print(f"Correct! You now have {config.user_xp}xp!")
     else:
         print(f"Wrong! The correct answer is '{portuguese_farewell}'.")
 """ Fill in the blanks exercise for both greetings and farewells (gf)"""
@@ -92,7 +94,8 @@ def gf_fill_in_the_blanks():
     #asks the user to fill in the blank and saves their answer to be checked against the correct answer
     if answer == correct_answer:
         #checks if the user's answer is correct by comparing it to the correct answer saved from the dictionary
-        print("Correct!")
+        config.user_xp += 10
+        print(f"Correct! You now have {config.user_xp}xp!")
     else:
         print(f"Wrong! The correct answer is '{correct_answer}'.")
 """ Match the word exercise for both greetings and farewells (gf)"""
@@ -131,7 +134,8 @@ def gf_match_the_word():
         #asks users to write the pair of both english and portuguese words
         if portuguese_answer == greetings.get(word) or portuguese_answer == farewell.get(word):
             #checks if the pair is correct based on the greetings dictionary
-            print("Correct!")
+            config.user_xp += 5
+            print(f"Correct! You now have {config.user_xp}xp!")
         else:
             print(f"Wrong! The pair was {word} and {greetings.get(word) or farewell.get(word)}.")
 """ Build a Sentence exercise for both greetings and farewells (gf)"""
@@ -154,7 +158,8 @@ def gf_build_a_sentence():
     #asks the user to fill in the blank and saves their answer to be checked against the correct answer
     if answer == correct_answer:
         #checks if the user's answer is correct by comparing it to the correct answer saved from the dictionary
-        print("Correct!")
+        config.user_xp += 10
+        print(f"Correct! You now have {config.user_xp}xp!")
     else:
         print(f"Wrong! The correct answer is '{correct_answer}'.")
 """ Lesson plan for greetings and farewells (gf)"""
@@ -170,9 +175,17 @@ def gf_lesson_plan():
         #prints each english word with is portuguese translation
         config.enter_to_continue()
         #ensures that next word only shows when pressed enter
+    print('Note: when someone asks "Estou bem, obrigado, e você?" you can respond with "Estou bem, obrigado"')
+    config.enter_to_continue()
+    print("Note: Words like 'obrigado' usually change spelling depending on the gender of who is talking. For example, if a woman is speaking, they say 'obrigada'. However for this program we will be using 'obrigado' througout")
+    config.enter_to_continue()
+    print("Also, there are two ways of saying you in Portuguese: 'você' and 'tu'. 'Você' is more commonly used in Brazil while 'tu' is more commonly used in Portugal. Additionally 'tu' is considered more informal while 'você' is considered more formal. For this program we will be using 'você' throughout")
+    config.enter_to_continue()
     print("And here are the most common farewells in Portuguese:")
     for english, portuguese in farewell.items():
         print(f"{english} : {portuguese}")
         config.enter_to_continue()
+    print("Note: there are two forms of saying goodbye in Portuguese: 'tchau' and 'adeus'. 'Tchau' is for when you know you are meeting the person again while 'adeus' is for when you don't know if you are meeting the person again")
+    config.enter_to_continue()
     print("Now let's practice what we have learned with some exercises!")
-""" Press enter function """    
+    config.enter_to_continue()
