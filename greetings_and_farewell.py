@@ -178,8 +178,8 @@ def gf_lesson_plan():
     for english, portuguese in greetings.items():
         print(f"{english} : {portuguese}")
         #prints each english word with is portuguese translation
-        config.enter_to_continue()
-        #ensures that next word only shows when pressed enter
+    config.enter_to_continue()
+    #ensures that next word only shows when pressed enter
     print('Note: when someone asks "Estou bem, obrigado, e você?" you can respond with "Estou bem, obrigado"')
     config.enter_to_continue()
     print("Note: Words like 'obrigado' usually change spelling depending on the gender of who is talking. For example, if a woman is speaking, they say 'obrigada'. However for this program we will be using 'obrigado' througout")
@@ -189,7 +189,7 @@ def gf_lesson_plan():
     print("And here are the most common farewells in Portuguese:")
     for english, portuguese in farewell.items():
         print(f"{english} : {portuguese}")
-        config.enter_to_continue()
+    config.enter_to_continue()
     print("Note: there are two forms of saying goodbye in Portuguese: 'tchau' and 'adeus'. 'Tchau' is for when you know you are meeting the person again while 'adeus' is for when you don't know if you are meeting the person again")
     config.enter_to_continue()
     print("Now let's practice what we have learned with some exercises!")

@@ -1,5 +1,5 @@
 user_xp = 0
-user_lives = 7
+user_lives = 5
 
 def enter_to_continue():
     while True:
