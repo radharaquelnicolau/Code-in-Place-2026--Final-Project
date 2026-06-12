@@ -23,12 +23,18 @@ import common_phrases
 #these imports are the different language modules have the different exercise types for each module, they will be used to create the different exercises for the user to practice and learn the language.
 def main():
     greetings_and_farewell.gf_lesson_plan()
+    config.enter_to_continue()
     greetings_and_farewell.g_multiple_choice()
+    config.enter_to_continue()
     greetings_and_farewell.f_multiple_choice()
+    config.enter_to_continue()
     greetings_and_farewell.gf_fill_in_the_blanks()
+    config.enter_to_continue()
     greetings_and_farewell.gf_match_the_word()
+    config.enter_to_continue()
     greetings_and_farewell.gf_build_a_sentence()
-    
+    print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp and have {config.user_lives} lives remaining.")
+
 
 if __name__ == "__main__":
     main()

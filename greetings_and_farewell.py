@@ -45,9 +45,10 @@ def g_multiple_choice():
     if options[answer - 1] == portuguese_greeting:
     #checks that if the number the user gave corresponds to the correct index of the portuguese translation
         config.user_xp += 5
-        print(f"Correct! You now have {config.user_xp}xp!")
+        print(f"Correct! You now have {config.user_xp}xp! You still have {config.user_lives} lives")
     else:
-        print(f"Wrong! The correct answer is '{portuguese_greeting}'.")
+        config.user_lives -= 1
+        print(f"Unfortunately, that is incorrect. The correct answer is '{portuguese_greeting}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Farewell(f) Multiple Choice Exercise"""
 def f_multiple_choice():
     english_farewell = random.choice(list(farewell.keys()))
@@ -68,21 +69,22 @@ def f_multiple_choice():
     if options[answer - 1] == portuguese_farewell:
     #checks that if the number the user gave corresponds to the correct index of the portuguese translation
         config.user_xp += 5
-        print(f"Correct! You now have {config.user_xp}xp!")
+        print(f"Correct! You now have {config.user_xp}xp! You still have {config.user_lives} lives")
     else:
-        print(f"Wrong! The correct answer is '{portuguese_farewell}'.")
+        config.user_lives -= 1
+        print(f"Unfortunately, that is incorrect. The correct answer is '{portuguese_farewell}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Fill in the blanks exercise for both greetings and farewells (gf)"""
 def gf_fill_in_the_blanks():
     incomplete_sentences = {
-        "_________ estás?" : "como",
-        "_________ dia, como estás?" : "bom",
-        "Oi, _______ _______, obrigado" : "estou bem",
-        "_________ tarde, até logo!" : "boa",
-        "_________, tenha um bom dia" : "tchau",
-        "_______ noite, até amanhã!" : "boa",
-        "tenha um ________ _______" : "bom dia",
-        "estou bem, _________": "obrigado",
-        "________ logo!" : "até",
+        "____ estás?" : "como",
+        "___ dia, como estás?" : "bom",
+        "oi, _____ ___, obrigado" : "estou bem",
+        "___ tarde, até logo!" : "boa",
+        "_____, tenha um bom dia" : "tchau",
+        "___ noite, até amanhã!" : "boa",
+        "tenha um ___ ___" : "bom dia",
+        "estou bem, ________": "obrigado",
+        "___ logo!" : "até",
     }
     #dictionary of the incomplete sentences with the values being the correct answer to the incomplete sentence
     incomplete_sentence = random.choice(list(incomplete_sentences.keys()))
@@ -95,9 +97,10 @@ def gf_fill_in_the_blanks():
     if answer == correct_answer:
         #checks if the user's answer is correct by comparing it to the correct answer saved from the dictionary
         config.user_xp += 10
-        print(f"Correct! You now have {config.user_xp}xp!")
+        print(f"Correct! You now have {config.user_xp}xp! You still have {config.user_lives} lives")
     else:
-        print(f"Wrong! The correct answer is '{correct_answer}'.")
+        config.user_lives -= 1
+        print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Match the word exercise for both greetings and farewells (gf)"""
 def gf_match_the_word():
     big_english_words_list = list(greetings.keys()) + list(farewell.keys())
@@ -135,9 +138,10 @@ def gf_match_the_word():
         if portuguese_answer == greetings.get(word) or portuguese_answer == farewell.get(word):
             #checks if the pair is correct based on the greetings dictionary
             config.user_xp += 5
-            print(f"Correct! You now have {config.user_xp}xp!")
+            print(f"Correct! You now have {config.user_xp}xp! You still have {config.user_lives} lives")
         else:
-            print(f"Wrong! The pair was {word} and {greetings.get(word) or farewell.get(word)}.")
+            config.user_lives -= 1
+            print(f"Unfortunately that is not correct. The correct answer is '{greetings.get(word) or farewell.get(word)}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Build a Sentence exercise for both greetings and farewells (gf)"""
 def gf_build_a_sentence():
     sentences = {
@@ -159,9 +163,10 @@ def gf_build_a_sentence():
     if answer == correct_answer:
         #checks if the user's answer is correct by comparing it to the correct answer saved from the dictionary
         config.user_xp += 10
-        print(f"Correct! You now have {config.user_xp}xp!")
+        print(f"Correct! You now have {config.user_xp}xp! You still have {config.user_lives} lives")
     else:
-        print(f"Wrong! The correct answer is '{correct_answer}'.")
+        config.user_lives -= 1
+        print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Lesson plan for greetings and farewells (gf)"""
 def gf_lesson_plan():
     print("Welcome to our first lesson!")
