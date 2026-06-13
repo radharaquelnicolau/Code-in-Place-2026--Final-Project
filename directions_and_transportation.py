@@ -201,6 +201,7 @@ def dt_lesson_plan():
     "I am between the car and the bicycle -> Estou entre o carro e a bicicleta")
     config.enter_to_continue()
     print("Note: I am in Portuguese can be written as 'eu (I) estou(am)' or simply 'estou' because the first person pronoun can be dropped in a sentence in portuguese")
+    config.enter_to_continue()
     print("And here are the most common transportations in Portuguese:")
     for english, portuguese in transportation.items():
         print(f"{english} : {portuguese}")

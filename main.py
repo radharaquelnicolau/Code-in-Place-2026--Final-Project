@@ -32,6 +32,8 @@ def main():
     greetings_and_farewell_lesson()
     print("Now let's go to our next lesson!")
     numbers_and_dates_lesson()
+    print("Now let's go to our next lesson!")
+    directions_and_transportation_lesson()
 
 #function for gameloop of greetings and farewell
 def greetings_and_farewell_lesson():
@@ -56,6 +58,7 @@ def greetings_and_farewell_lesson():
             break
         #breaks because the user has completed the exercises without losing all lives
     print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
+    config.enter_to_continue()
 
 #function of gameloop of numbers and dates
 def numbers_and_dates_lesson():
@@ -80,6 +83,31 @@ def numbers_and_dates_lesson():
             break
         #breaks because the user has completed the exercises without losing all lives
     print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
+    config.enter_to_continue()
+
+def directions_and_transportation_lesson():
+    while True:
+        #ensures that this loops repeats when you lose all lives
+        directions_and_transportation_lesson.dt_lesson_plan()
+        #displays gf lesson plan first
+        dt_exercise_list = [directions_and_transportation.d_multiple_choice, directions_and_transportation.t_multiple_choice, directions_and_transportation.dt_fill_in_the_blanks, directions_and_transportation.dt_fill_in_the_blanks, directions_and_transportation.dt_match_the_word, directions_and_transportation.dt_build_a_sentence, directions_and_transportation.dt_build_a_sentence]
+        #list of all functions being used so that the functions can be shuffled and not used in order
+        random.shuffle(dt_exercise_list)
+        #shuffles the list so that functions are not in the same order as in the module file
+        for exercise in dt_exercise_list:
+            exercise()
+            config.enter_to_continue()
+            #for loop runs through all the functions in the list
+            if config.user_lives == 0 or numbers_and_dates.broken_loop == True:
+                print("You have lost all your lives. The lesson will now start over. Don't worry, you can do it! Just pay attention and try your best to earn points while keeping your lives intact. Good luck!")
+                config.user_lives = 5
+                break
+            #if statment checks for whether the lives are finished or the break loop variable for match a word is true so that the lesson can restart
+        else:
+            break
+        #breaks because the user has completed the exercises without losing all lives
+    print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
+    config.enter_to_continue()
 
 
 if __name__ == "__main__":
