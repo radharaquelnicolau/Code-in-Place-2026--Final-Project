@@ -10,20 +10,25 @@ from tabulate import tabulate
 import config
 #imports scores, lives and functionality into the module and main
 directions = {
-    "hello" : "olá",
-    "hi" : "oi",
-    "good morning" : "bom dia",
-    "good afternoon" : "boa tarde",
-    "good evening/night" : "boa noite",
-    "how are you?" : "como estás?",
-    "I'm fine, thank you, and you?" : "estou bem, obrigado, e você?"
+    "turn right" : "vire à direita",
+    "turn left" : "vire à esquerda",
+    "continue straight ahead" : "continue sempre em frente",
+    "go straight ahead" : "siga em frente",
+    "behind" : "atrás",
+    "next to" : "ao lado de",
+    "between" : "entre",
+    "in front" : "em frente"
 }
 #dictionary for directions in portuguese
 transportation = {
-    "goodbye" : "tchau",
-    "see you later" : "até logo",
-    "see you tomorrow" : "até amanhã",
-    "have a nice day" : "tenha um bom dia",
+    "the bus" : "o autocarro",
+    "the taxi" : "O táxi",
+    "the subway" : "O metro",
+    "the bicycle" : "a bicicleta",
+    "ship" : "o navio",
+    "plane" : "avião",
+    "car" : "carro",
+    "by foot" : "a pé"
 }   
 #dictionary for transportations in portuguese
 """Directions(d) Multiple Choice Exercise"""
@@ -79,15 +84,13 @@ def t_multiple_choice():
 """ Fill in the blanks exercise for both directions and transportations (dt)"""
 def dt_fill_in_the_blanks():
     incomplete_sentences = {
-        "____ estás?" : "como",
-        "___ dia, como estás?" : "bom",
-        "oi, _____ ___, obrigado" : "estou bem",
-        "___ tarde, até logo!" : "boa",
-        "_____, tenha um bom dia" : "tchau",
-        "___ noite, até amanhã!" : "boa",
-        "tenha um ___ ___" : "bom dia",
-        "estou bem, ________": "obrigado",
-        "___ logo!" : "até",
+        "siga __ ______" : "em frente",
+        "ao ____ de" : "lado",
+        "_____ o carro e a bicicleta" : "entre",
+        "__ frente do navio" : "em",
+        "vire à _______" : "direita",
+        "____ _ esquerda" : "vire à _______",
+        "________ sempre em frente" : "continue",
     }
     #dictionary of the incomplete sentences with the values being the correct answer to the incomplete sentence
     incomplete_sentence = random.choice(list(incomplete_sentences.keys()))
@@ -152,12 +155,11 @@ def dt_match_the_word():
 """ Build a Sentence exercise for both directions and transportations (dt)"""
 def dt_build_a_sentence():
     sentences = {
-        "good morning, how are you?" : "bom dia, como estás",
-        "hello, I am fine, thank you" : "olá, estou bem, obrigado",
-        "good afternoon, see you soon!" : "boa tarde, até logo!",
-        "goodbye, have a nice day" : "tchau, tenha um bom dia",
-        "good night, see you tomorrow" : "boa noite, até amanhã",
-        "I am fine, thank you and you?" : "estou bem, obrigada, e você?"
+        "the car is next to the bus" : "o carro está ao lado do autocarro",
+        "continue straight" : "continue sempre em frente",
+        "The car is in front of three bicycles" : "O carro está em frente de três bicicletas",
+        "I will go by foot" : "eu vou a pé",
+        "good evening, I am behind the taxi" : "boa noite, estou atrás do táxi"
     }
     #dictionary of the  sentences with the values being the correct translation to the sentence
     sentence = random.choice(list(sentences.keys()))
@@ -176,8 +178,8 @@ def dt_build_a_sentence():
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Lesson plan for directions and transportations (dt)"""
 def dt_lesson_plan():
-    print("Now let's start with our first lesson!")
-    print("In this lesson, we will be learning about common directions and transportations in Portuguese.")
+    print("Welcome to our third lesson!")
+    print("In this lesson, we will be learning about directions and modes of transportation in Portuguese.")
     #introduces the user to the first lesson of unolingua
     config.enter_to_continue()
     #function to make sure that only by pressing enter, will the user continue
@@ -187,17 +189,23 @@ def dt_lesson_plan():
         #prints each english word with is portuguese translation
     config.enter_to_continue()
     #ensures that next word only shows when pressed enter
-    print('Note: when someone asks "Estou bem, obrigado, e você?" you can respond with "Estou bem, obrigado"')
+    print('Note: vire -> turn, ' \
+          "siga -> follow," \
+          "sempre -> always," \
+          "These are the separate meaning of some of the words used when explaining directions")
     config.enter_to_continue()
-    print("Note: Words like 'obrigado' usually change spelling depending on the gender of who is talking. For example, if a woman is speaking, they say 'obrigada'. However for this program we will be using 'obrigado' througout")
+    print("Some example sentences include: " \
+    "the car is next to the bus -> o carro está ao lado do autocarro," \
+    "The car is in front of three bicycles -> O carro está em frente de três bicicletas," \
+    "I am behind the taxi -> estou atrás do táxi" \
+    "I am between the car and the bicycle -> Estou entre o carro e a bicicleta")
     config.enter_to_continue()
-    print("Also, there are two ways of saying you in Portuguese: 'você' and 'tu'. 'Você' is more commonly used in Brazil while 'tu' is more commonly used in Portugal. Additionally 'tu' is considered more informal while 'você' is considered more formal. For this program we will be using 'você' throughout")
-    config.enter_to_continue()
+    print("Note: I am in Portuguese can be written as 'eu (I) estou(am)' or simply 'estou' because the first person pronoun can be dropped in a sentence in portuguese")
     print("And here are the most common transportations in Portuguese:")
     for english, portuguese in transportation.items():
         print(f"{english} : {portuguese}")
     config.enter_to_continue()
-    print("Note: there are two forms of saying goodbye in Portuguese: 'tchau' and 'adeus'. 'Tchau' is for when you know you are meeting the person again while 'adeus' is for when you don't know if you are meeting the person again")
+    print("Note: The definite articles in portugese are 'O(masculine singular), A(feminine singular), Os(masculine plural), As(feminine plural)'. These articles can make contractions with prepositions such as de(of) to form 'do = de + o', 'da = de + a', 'dos = de + os', 'das = de + as'")
     config.enter_to_continue()
     print("Now let's practice what we have learned with some exercises! Please be mindful of the following:")
     print("Please make sure that your answers are all in lowercase and that you don't leave any space (except between words) when answering")
