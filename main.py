@@ -30,7 +30,10 @@ def main():
     config.enter_to_continue()
     # Explanatory text for Unolingua
     greetings_and_farewell_lesson()
+    print("Now let's go to our next lesson!")
+    numbers_and_dates_lesson()
 
+#function for gameloop of greetings and farewell
 def greetings_and_farewell_lesson():
     while True:
         #ensures that this loops repeats when you lose all lives
@@ -44,7 +47,7 @@ def greetings_and_farewell_lesson():
             exercise()
             config.enter_to_continue()
             #for loop runs through all the functions in the list
-            if config.user_lives == 0 or greetings_and_farewell.broken_loop == True:
+            if config.user_lives == 0 or numbers_and_dates.broken_loop == True:
                 print("You have lost all your lives. The lesson will now start over. Don't worry, you can do it! Just pay attention and try your best to earn points while keeping your lives intact. Good luck!")
                 config.user_lives = 5
                 break
@@ -53,7 +56,31 @@ def greetings_and_farewell_lesson():
             break
         #breaks because the user has completed the exercises without losing all lives
     print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
-    
+
+#function of gameloop of numbers and dates
+def numbers_and_dates_lesson():
+    while True:
+        #ensures that this loops repeats when you lose all lives
+        numbers_and_dates.nd_lesson_plan()
+        #displays gf lesson plan first
+        nd_exercise_list = [numbers_and_dates.n_multiple_choice, numbers_and_dates.d_multiple_choice, numbers_and_dates.nd_fill_in_the_blanks, numbers_and_dates.nd_fill_in_the_blanks, numbers_and_dates.nd_match_the_word, numbers_and_dates.nd_build_a_sentence, numbers_and_dates.nd_build_a_sentence]
+        #list of all functions being used so that the functions can be shuffled and not used in order
+        random.shuffle(nd_exercise_list)
+        #shuffles the list so that functions are not in the same order as in the module file
+        for exercise in nd_exercise_list:
+            exercise()
+            config.enter_to_continue()
+            #for loop runs through all the functions in the list
+            if config.user_lives == 0 or numbers_and_dates.broken_loop == True:
+                print("You have lost all your lives. The lesson will now start over. Don't worry, you can do it! Just pay attention and try your best to earn points while keeping your lives intact. Good luck!")
+                config.user_lives = 5
+                break
+            #if statment checks for whether the lives are finished or the break loop variable for match a word is true so that the lesson can restart
+        else:
+            break
+        #breaks because the user has completed the exercises without losing all lives
+    print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
+
 
 if __name__ == "__main__":
     main()
