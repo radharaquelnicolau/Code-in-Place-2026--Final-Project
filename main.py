@@ -49,9 +49,10 @@ def greetings_and_farewell_lesson():
             exercise()
             config.enter_to_continue()
             #for loop runs through all the functions in the list
-            if config.user_lives == 0 or numbers_and_dates.broken_loop == True:
+            if config.user_lives == 0 or greetings_and_farewell.broken_loop == True:
                 print("You have lost all your lives. The lesson will now start over. Don't worry, you can do it! Just pay attention and try your best to earn points while keeping your lives intact. Good luck!")
                 config.user_lives = 5
+                greetings_and_farewell.broken_loop = False
                 break
             #if statment checks for whether the lives are finished or the break loop variable for match a word is true so that the lesson can restart
         else:
@@ -77,6 +78,7 @@ def numbers_and_dates_lesson():
             if config.user_lives == 0 or numbers_and_dates.broken_loop == True:
                 print("You have lost all your lives. The lesson will now start over. Don't worry, you can do it! Just pay attention and try your best to earn points while keeping your lives intact. Good luck!")
                 config.user_lives = 5
+                numbers_and_dates.broken_loop = False
                 break
             #if statment checks for whether the lives are finished or the break loop variable for match a word is true so that the lesson can restart
         else:
@@ -88,7 +90,7 @@ def numbers_and_dates_lesson():
 def directions_and_transportation_lesson():
     while True:
         #ensures that this loops repeats when you lose all lives
-        directions_and_transportation_lesson.dt_lesson_plan()
+        directions_and_transportation.dt_lesson_plan()
         #displays gf lesson plan first
         dt_exercise_list = [directions_and_transportation.d_multiple_choice, directions_and_transportation.t_multiple_choice, directions_and_transportation.dt_fill_in_the_blanks, directions_and_transportation.dt_fill_in_the_blanks, directions_and_transportation.dt_match_the_word, directions_and_transportation.dt_build_a_sentence, directions_and_transportation.dt_build_a_sentence]
         #list of all functions being used so that the functions can be shuffled and not used in order
@@ -98,9 +100,10 @@ def directions_and_transportation_lesson():
             exercise()
             config.enter_to_continue()
             #for loop runs through all the functions in the list
-            if config.user_lives == 0 or numbers_and_dates.broken_loop == True:
+            if config.user_lives == 0 or directions_and_transportation.broken_loop == True:
                 print("You have lost all your lives. The lesson will now start over. Don't worry, you can do it! Just pay attention and try your best to earn points while keeping your lives intact. Good luck!")
                 config.user_lives = 5
+                directions_and_transportation.broken_loop = False
                 break
             #if statment checks for whether the lives are finished or the break loop variable for match a word is true so that the lesson can restart
         else:

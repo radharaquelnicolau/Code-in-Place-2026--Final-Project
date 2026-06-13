@@ -89,7 +89,7 @@ def dt_fill_in_the_blanks():
         "_____ o carro e a bicicleta" : "entre",
         "__ frente do navio" : "em",
         "vire à _______" : "direita",
-        "____ _ esquerda" : "vire à _______",
+        "____ _ esquerda" : "vire à",
         "________ sempre em frente" : "continue",
     }
     #dictionary of the incomplete sentences with the values being the correct answer to the incomplete sentence
