@@ -83,6 +83,17 @@ def main():
     show_fun_fact()
     print("Now let's go to our next lesson!")
     locations_and_shopping_lesson()
+    show_fun_fact()
+    print("Congratulations on finishing Unolingua! I hope Unolingua felt like a tangible first step in grasping the beautiful Portuguese language. I recommend you don't stop your Portuguese journey here. Here are some resources that you can use to continue your Portuguese speaking journey:")
+    config.enter_to_continue()
+    print("Firstly, you can always use Duolingo. Unolingua was a passion project heavily inspired by Duolingo so I would recommend you go there first." \
+    "I also recommend Memrise. It is an app similar to Duo but it uses spaced repitition which helps with retention.")
+    config.enter_to_continue()
+    print("Some websites I would recommend are Loecsen and PortuguesePod101. PortuguesePod101 also has a youtube channel and a podcast which is incredibly useful for pronunciation and just learning how the language is actually spoken.")
+    config.enter_to_continue()
+    print("Finally, for sites I would recommend for live practice. I would recommend italky and preply. Both have Portuguese tutors who can help you with conversation practice.")
+    config.enter_to_continue()
+    print("Once again, thank you so much for trying out Unolingua. Unolingua was submitted as a final project for Code in Place 2026. It is my first proper python project. However, I do understand that it is not perfect and there is a lot of room for growth. I appreciate everyone that tried Unolingua out and wish the best of luck to all of you!")
 
 #function for gameloop of greetings and farewell
 def greetings_and_farewell_lesson():
@@ -132,7 +143,7 @@ def numbers_and_dates_lesson():
         else:
             break
         #breaks because the user has completed the exercises without losing all lives
-    print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
+    print(f"Congratulations on completing the second lesson! You have earned a total of {config.user_xp}xp")
     config.enter_to_continue()
 #function of gameloop of directions and transportation
 def directions_and_transportation_lesson():
@@ -157,7 +168,7 @@ def directions_and_transportation_lesson():
         else:
             break
         #breaks because the user has completed the exercises without losing all lives
-    print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
+    print(f"Congratulations on completing the third lesson! You have earned a total of {config.user_xp}xp")
     config.enter_to_continue()
 #function of gameloop of locations and shopping 
 def locations_and_shopping_lesson():
@@ -182,9 +193,33 @@ def locations_and_shopping_lesson():
         else:
             break
         #breaks because the user has completed the exercises without losing all lives
-    print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
+    print(f"Congratulations on completing the fourth lesson! You have earned a total of {config.user_xp}xp")
     config.enter_to_continue()
-
+#function of gameloop for common phrases
+def common_phrases_lesson():
+    while True:
+        #ensures that this loops repeats when you lose all lives
+        common_phrases.c_lesson_plan()
+        #displays gf lesson plan first
+        c_exercise_list = [common_phrases.c_multiple_choice, common_phrases.c_multiple_choice, common_phrases.c_fill_in_the_blanks, common_phrases.c_fill_in_the_blanks, common_phrases.c_match_the_word, common_phrases.c_build_a_sentence, common_phrases.c_build_a_sentence]
+        #list of all functions being used so that the functions can be shuffled and not used in order
+        random.shuffle(c_exercise_list)
+        #shuffles the list so that functions are not in the same order as in the module file
+        for exercise in c_exercise_list:
+            exercise()
+            config.enter_to_continue()
+            #for loop runs through all the functions in the list
+            if config.user_lives == 0 or common_phrases.broken_loop == True:
+                print("You have lost all your lives. The lesson will now start over. Don't worry, you can do it! Just pay attention and try your best to earn points while keeping your lives intact. Good luck!")
+                config.user_lives = 5
+                common_phrases.broken_loop = False
+                break
+            #if statment checks for whether the lives are finished or the break loop variable for match a word is true so that the lesson can restart
+        else:
+            break
+        #breaks because the user has completed the exercises without losing all lives
+    print(f"Congratulations on completing the last lesson! You have earned a total of {config.user_xp}xp")
+    config.enter_to_continue()
 #function that displays fun facts 
 def show_fun_fact():
     fact = random.choice(fun_facts)
@@ -196,5 +231,6 @@ def show_fun_fact():
     #prints the country and a fun fact
     print("=" * 50)
     config.enter_to_continue()
+    
 if __name__ == "__main__":
     main()
