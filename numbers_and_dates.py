@@ -117,6 +117,7 @@ def nd_fill_in_the_blanks():
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Match the word exercise for both numbers and dates (nd)"""
 def nd_match_the_word():
+    global broken_loop
     big_english_words_list = list(numbers.keys()) + list(dates.keys())
     #makes a big list with all the english words from both dictionaries
     english_words = []
@@ -187,7 +188,7 @@ def nd_build_a_sentence():
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Lesson plan for numbers and dates (nd)"""
 def nd_lesson_plan():
-    print("Welcome to our seccond lesson!")
+    print("Welcome to our second lesson!")
     print("In this lesson, we will be learning about numbers and dates in Portuguese.")
     #introduces the user to the second lesson of unolingua
     config.enter_to_continue()

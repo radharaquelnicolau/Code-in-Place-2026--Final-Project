@@ -109,6 +109,7 @@ def dt_fill_in_the_blanks():
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Match the word exercise for both directions and transportations (dt)"""
 def dt_match_the_word():
+    global broken_loop
     big_english_words_list = list(directions.keys()) + list(transportation.keys())
     #makes a big list with all the english words from both dictionaries
     english_words = []

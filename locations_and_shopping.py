@@ -87,7 +87,7 @@ def ls_fill_in_the_blanks():
     incomplete_sentences = {
         "a _______ de autocarro" : "paragem",
         "onde ____ o parque?" : "fica",
-        "os ________" : "os vegetais",
+        "os ________" : "vegetais",
         "eu _____ isso" : "quero",
         "como _____ à estação" : "chego",
         "a paragem de _________" : "autocarro",
@@ -110,6 +110,7 @@ def ls_fill_in_the_blanks():
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Match the word exercise for both locations and shopping (ls)"""
 def ls_match_the_word():
+    global broken_loop
     big_english_words_list = list(locations.keys()) + list(shopping.keys())
     #makes a big list with all the english words from both dictionaries
     english_words = []
@@ -159,7 +160,7 @@ def ls_build_a_sentence():
         "good morning, where is the station?" : "bom dia, onde fica a estação?",
         "the school is behind the street" : "a escola fica atrás da rua",
         "good afternoon , how much is the bread?" : "boa tarde, quanto custa o pão?",
-        "I am next to the park (includes eu)" : "eu estou ao lado do parque",
+        "I am next to the park" : "eu estou ao lado do parque",
         "I want this" : "eu quero isso",
         "how do I get to the bank?" : "como chego ao banco?"
     }

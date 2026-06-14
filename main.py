@@ -78,12 +78,12 @@ def main():
     numbers_and_dates_lesson()
     show_fun_fact()
     print("Now let's go to our next lesson!")
-    show_fun_fact()
     directions_and_transportation_lesson()
     show_fun_fact()
     print("Now let's go to our next lesson!")
     locations_and_shopping_lesson()
     show_fun_fact()
+    common_phrases_lesson()
     print("Congratulations on finishing Unolingua! I hope Unolingua felt like a tangible first step in grasping the beautiful Portuguese language. I recommend you don't stop your Portuguese journey here. Here are some resources that you can use to continue your Portuguese speaking journey:")
     config.enter_to_continue()
     print("Firstly, you can always use Duolingo. Unolingua was a passion project heavily inspired by Duolingo so I would recommend you go there first." \
@@ -231,6 +231,6 @@ def show_fun_fact():
     #prints the country and a fun fact
     print("=" * 50)
     config.enter_to_continue()
-    
+
 if __name__ == "__main__":
     main()

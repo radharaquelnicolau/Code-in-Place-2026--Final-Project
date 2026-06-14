@@ -81,6 +81,7 @@ def c_fill_in_the_blanks():
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Match the word exercise for common_phrases (c)"""
 def c_match_the_word():
+    global broken_loop
     big_english_words_list = list(common_phrases.keys())
     #makes a big list with all the english words from both dictionaries
     english_words = []
