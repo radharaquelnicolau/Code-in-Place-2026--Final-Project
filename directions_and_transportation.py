@@ -206,6 +206,8 @@ def dt_lesson_plan():
     for english, portuguese in transportation.items():
         print(f"{english} : {portuguese}")
     config.enter_to_continue()
+    print("Note: Words like subway and bus have different Portuguese translations depending on the region. Bus in European Portuguese is 'autocarro' but in Brazilian Portuguese it is 'ônibus'. Subway in European Portuguese is 'metro' while in Brazilian Portuguese is 'metrô' ")
+    config.enter_to_continue()
     print("Note: The definite articles in portugese are 'O(masculine singular), A(feminine singular), Os(masculine plural), As(feminine plural)'. These articles can make contractions with prepositions such as de(of) to form 'do = de + o', 'da = de + a', 'dos = de + os', 'das = de + as'")
     config.enter_to_continue()
     print("Now let's practice what we have learned with some exercises! Please be mindful of the following:")

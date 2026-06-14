@@ -10,20 +10,27 @@ from tabulate import tabulate
 import config
 #imports scores, lives and functionality into the module and main
 locations = {
-    "hello" : "olá",
-    "hi" : "oi",
-    "good morning" : "bom dia",
-    "good afternoon" : "boa tarde",
-    "good evening/night" : "boa noite",
-    "how are you?" : "como estás?",
-    "I'm fine, thank you, and you?" : "estou bem, obrigado, e você?"
+    "the bus stop" : "a paragem de autocarro",
+    "the station" : "a estação",
+    "the street" : "rua",
+    "the house" : "a casa",
+    "the school" : "a escola",
+    "where is.....?" : "onde fica?",
+    "how do I get to....?" : "como chego a?",
+    "the bank" : "o banco",
+    "the park" : "o parque"
 }
 #dictionary for locations in portuguese
 shopping = {
-    "goodbye" : "tchau",
-    "see you later" : "até logo",
-    "see you tomorrow" : "até amanhã",
-    "have a nice day" : "tenha um bom dia",
+    "how much?" : "quanto custa?",
+    "I want this." : "eu quero isso",
+    "the shop" : "a loja",
+    "the supermarket" : "o supermercado",
+    "water" : "a água",
+    "bread" : "o pão",
+    "fruit" : "a fruta",
+    "vegetables" : "os vegetais",
+    "coffee" : "o café",
 }   
 #dictionary for shopping vocab in portuguese
 """Locations(l) Multiple Choice Exercise"""
@@ -78,15 +85,13 @@ def s_multiple_choice():
 """ Fill in the blanks exercise for both locations and shopping (ls)"""
 def ls_fill_in_the_blanks():
     incomplete_sentences = {
-        "____ estás?" : "como",
-        "___ dia, como estás?" : "bom",
-        "oi, _____ ___, obrigado" : "estou bem",
-        "___ tarde, até logo!" : "boa",
-        "_____, tenha um bom dia" : "tchau",
-        "___ noite, até amanhã!" : "boa",
-        "tenha um ___ ___" : "bom dia",
-        "estou bem, ________": "obrigado",
-        "___ logo!" : "até",
+        "a _______ de autocarro" : "paragem",
+        "onde ____ o parque?" : "fica",
+        "os ________" : "os vegetais",
+        "eu _____ isso" : "quero",
+        "como _____ à estação" : "chego",
+        "a paragem de _________" : "autocarro",
+        "____ fica o banco?" : "onde",
     }
     #dictionary of the incomplete sentences with the values being the correct answer to the incomplete sentence
     incomplete_sentence = random.choice(list(incomplete_sentences.keys()))
@@ -151,12 +156,12 @@ def ls_match_the_word():
 """ Build a Sentence exercise for both locations and shopping (ls)"""
 def ls_build_a_sentence():
     sentences = {
-        "good morning, how are you?" : "bom dia, como estás",
-        "hello, I am fine, thank you" : "olá, estou bem, obrigado",
-        "good afternoon, see you soon!" : "boa tarde, até logo!",
-        "goodbye, have a nice day" : "tchau, tenha um bom dia",
-        "good night, see you tomorrow" : "boa noite, até amanhã",
-        "I am fine, thank you and you?" : "estou bem, obrigada, e você?"
+        "good morning, where is the station?" : "bom dia, onde fica a estação?",
+        "the school is behind the street" : "a escola fica atrás da rua",
+        "good afternoon , how much is the bread?" : "boa tarde, quanto custa o pão?",
+        "I am next to the park (includes eu)" : "eu estou ao lado do parque",
+        "I want this" : "eu quero isso",
+        "how do I get to the bank?" : "como chego ao banco?"
     }
     #dictionary of the  sentences with the values being the correct translation to the sentence
     sentence = random.choice(list(sentences.keys()))
@@ -175,7 +180,7 @@ def ls_build_a_sentence():
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Lesson plan for locations and shoppings (ls)"""
 def ls_lesson_plan():
-    print("Now let's start with our first lesson!")
+    print("Now let's start with our fourth lesson!")
     print("In this lesson, we will be learning about common locations and shoppings in Portuguese.")
     #introduces the user to the first lesson of unolingua
     config.enter_to_continue()
@@ -186,17 +191,15 @@ def ls_lesson_plan():
         #prints each english word with is portuguese translation
     config.enter_to_continue()
     #ensures that next word only shows when pressed enter
-    print('Note: when someone asks "Estou bem, obrigado, e você?" you can respond with "Estou bem, obrigado"')
+    print('Note: The same way bus has two different Portuguese translations, bus stop has two Portuguese translations. In European Portuguese, bus stop is "paragem de autocarro" while in Brazilian Portuguese is "parada de ônibus"')
     config.enter_to_continue()
-    print("Note: Words like 'obrigado' usually change spelling depending on the gender of who is talking. For example, if a woman is speaking, they say 'obrigada'. However for this program we will be using 'obrigado' througout")
-    config.enter_to_continue()
-    print("Also, there are two ways of saying you in Portuguese: 'você' and 'tu'. 'Você' is more commonly used in Brazil while 'tu' is more commonly used in Portugal. Additionally 'tu' is considered more informal while 'você' is considered more formal. For this program we will be using 'você' throughout")
+    print("Note: The letter 'a' not only is used as a definite article but also as preposition that links places, direction, time and final destination (similar to 'by' and 'to'). 'a' the preposition can be contracted with the definite articles 'o' and 'a' as follows: 'a + o' = 'ao' and 'a + a' = 'à'. These contractions are used in place of having these two in a sentence and is the most correct way of writing. ")
     config.enter_to_continue()
     print("And here are the most common shoppings in Portuguese:")
     for english, portuguese in shopping.items():
         print(f"{english} : {portuguese}")
     config.enter_to_continue()
-    print("Note: there are two forms of saying goodbye in Portuguese: 'tchau' and 'adeus'. 'Tchau' is for when you know you are meeting the person again while 'adeus' is for when you don't know if you are meeting the person again")
+    print("Note: You can say 'quanto custa?' with an item so you would say 'quanto custa os vegetais?' (how much are the vegetables?) if you are specifically asking about an item and you are not pointing at it. Same thing with 'Eu quero isso.' 'Isso' is a demonstrative equivalent to 'this' or 'that'. You can swap it for the actual item and say 'Eu quero o pão' (I want the bread).")
     config.enter_to_continue()
     print("Now let's practice what we have learned with some exercises! Please be mindful of the following:")
     print("Please make sure that your answers are all in lowercase and that you don't leave any space (except between words) when answering")

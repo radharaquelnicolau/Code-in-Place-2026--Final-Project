@@ -60,7 +60,6 @@ def greetings_and_farewell_lesson():
         #breaks because the user has completed the exercises without losing all lives
     print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
     config.enter_to_continue()
-
 #function of gameloop of numbers and dates
 def numbers_and_dates_lesson():
     while True:
