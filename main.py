@@ -91,7 +91,7 @@ def main():
     config.enter_to_continue()
     print("Some websites I would recommend are Loecsen and PortuguesePod101. PortuguesePod101 also has a youtube channel and a podcast which is incredibly useful for pronunciation and just learning how the language is actually spoken.")
     config.enter_to_continue()
-    print("Finally, for sites I would recommend for live practice. I would recommend italky and preply. Both have Portuguese tutors who can help you with conversation practice.")
+    print("Finally, for sites I would recommend for live practice. I would recommend italki and preply. Both have Portuguese tutors who can help you with conversation practice.")
     config.enter_to_continue()
     print("Once again, thank you so much for trying out Unolingua. Unolingua was submitted as a final project for Code in Place 2026. It is my first proper python project. However, I do understand that it is not perfect and there is a lot of room for growth. I appreciate everyone that tried Unolingua out and wish the best of luck to all of you!")
 

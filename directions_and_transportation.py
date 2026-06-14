@@ -158,7 +158,7 @@ def dt_build_a_sentence():
     sentences = {
         "the car is next to the bus" : "o carro está ao lado do autocarro",
         "continue straight" : "continue sempre em frente",
-        "The car is in front of three bicycles" : "O carro está em frente de três bicicletas",
+        "The car is in front of three bicycles" : "o carro está em frente de três bicicletas",
         "I will go by foot" : "eu vou a pé",
         "good evening, I am behind the taxi" : "boa noite, estou atrás do táxi"
     }
