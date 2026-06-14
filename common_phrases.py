@@ -10,13 +10,18 @@ from tabulate import tabulate
 import config
 #imports scores, lives and functionality into the module and main
 common_phrases = {
-    "hello" : "olá",
-    "hi" : "oi",
-    "good morning" : "bom dia",
-    "good afternoon" : "boa tarde",
-    "good evening/night" : "boa noite",
-    "how are you?" : "como estás?",
-    "I'm fine, thank you, and you?" : "estou bem, obrigado, e você?"
+    "thank you" : "obrigado",
+    "you're welcome" : "de nada",
+    "excuse me" : "com licença",
+    "sorry" : "desculpe",
+    "yes" : "sim",
+    "no" : "não",
+    "what is your name?" : "qual é o seu nome?",
+    "my name is..." : "meu nome é",
+    "where are you from?" : "de onde você é?",
+    "I am from" : "eu sou de",
+    "do you speak english?" : "você fala inglês?",
+    "I don't understand" : "eu não entendo",
 }
 #dictionary for common_phrases in portuguese
 
@@ -46,18 +51,18 @@ def c_multiple_choice():
         config.user_lives -= 1
         print(f"Unfortunately, that is incorrect. The correct answer is '{portuguese_phrases}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 
-""" Fill in the blanks exercise for both common_phrases (c)"""
+""" Fill in the blanks exercise for common_phrases (c)"""
 def c_fill_in_the_blanks():
     incomplete_sentences = {
-        "____ estás?" : "como",
-        "___ dia, como estás?" : "bom",
-        "oi, _____ ___, obrigado" : "estou bem",
-        "___ tarde, até logo!" : "boa",
-        "_____, tenha um bom dia" : "tchau",
-        "___ noite, até amanhã!" : "boa",
+        "__ nada" : "de",
+        "com _______" : "licença",
+        "qual é _ ___ ____" : "o seu nome",
+        "o ___ ____ é..." : "meu nome",
+        "de onde ____ _" : "você é",
+        "__ ___ __..." : "eu sou de",
         "tenha um ___ ___" : "bom dia",
-        "estou bem, ________": "obrigado",
-        "___ logo!" : "até",
+        "você fala ______?" : "inglês",
+        "eu ___ _______" : "não entendo",
     }
     #dictionary of the incomplete sentences with the values being the correct answer to the incomplete sentence
     incomplete_sentence = random.choice(list(incomplete_sentences.keys()))
@@ -74,7 +79,7 @@ def c_fill_in_the_blanks():
     else:
         config.user_lives -= 1
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
-""" Match the word exercise for both common_phrases (c)"""
+""" Match the word exercise for common_phrases (c)"""
 def c_match_the_word():
     big_english_words_list = list(common_phrases.keys())
     #makes a big list with all the english words from both dictionaries
@@ -116,20 +121,12 @@ def c_match_the_word():
                 broken_loop = True
                 break
             #if loops check for whether the lives have finished and then changes the broken loop to true and breaks the loop
-""" Build a Sentence exercise for both common_phrases (c)"""
+""" Build a Sentence exercise for common_phrases (c)"""
 def c_build_a_sentence():
-    sentences = {
-        "good morning, how are you?" : "bom dia, como estás",
-        "hello, I am fine, thank you" : "olá, estou bem, obrigado",
-        "good afternoon, see you soon!" : "boa tarde, até logo!",
-        "goodbye, have a nice day" : "tchau, tenha um bom dia",
-        "good night, see you tomorrow" : "boa noite, até amanhã",
-        "I am fine, thank you and you?" : "estou bem, obrigada, e você?"
-    }
     #dictionary of the  sentences with the values being the correct translation to the sentence
-    sentence = random.choice(list(sentences.keys()))
+    sentence = random.choice(list(common_phrases.keys()))
     #selects a random incomplete sentence from the dictionary to be used for the fill in the blank exercise
-    correct_answer = sentences[sentence]
+    correct_answer = common_phrases[sentence]
     #saves the correct answer to the sentence to be used for checking the user's answer
     print(f"Translate this to portuguese: {sentence}'")
     answer = input("Enter your answer: ")
@@ -143,26 +140,19 @@ def c_build_a_sentence():
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Lesson plan for common_phrases (c)"""
 def c_lesson_plan():
-    print("Now let's start with our first lesson!")
-    print("In this lesson, we will be learning about common common_phrases in Portuguese.")
+    print("Welcome to our last lesson!")
+    print("In this lesson, we will be learning about common phrases in Portuguese.")
     #introduces the user to the first lesson of unolingua
     config.enter_to_continue()
     #function to make sure that only by pressing enter, will the user continue
-    print("Here are the most common common_phrases in Portuguese:")
+    print("Here are the most common phrases in Portuguese:")
     for english, portuguese in common_phrases.items():
         print(f"{english} : {portuguese}")
         #prints each english word with is portuguese translation
     config.enter_to_continue()
     #ensures that next word only shows when pressed enter
-    print('Note: when someone asks "Estou bem, obrigado, e você?" you can respond with "Estou bem, obrigado"')
+    print("This our last lesson. These are common everyday phrases that every beginner should at least know to get around Portuguese speaking countries. I hoped you enjoyed learning with Unolingua and I hope that you can continue learning Portuguese after Unolingua!")
     config.enter_to_continue()
-    print("Note: Words like 'obrigado' usually change spelling depending on the gender of who is talking. For example, if a woman is speaking, they say 'obrigada'. However for this program we will be using 'obrigado' througout")
-    config.enter_to_continue()
-    print("Also, there are two ways of saying you in Portuguese: 'você' and 'tu'. 'Você' is more commonly used in Brazil while 'tu' is more commonly used in Portugal. Additionally 'tu' is considered more informal while 'você' is considered more formal. For this program we will be using 'você' throughout")
-    config.enter_to_continue()
-    print("Note: there are two forms of saying goodbye in Portuguese: 'tchau' and 'adeus'. 'Tchau' is for when you know you are meeting the person again while 'adeus' is for when you don't know if you are meeting the person again")
-    config.enter_to_continue()
-    print("Now let's practice what we have learned with some exercises! Please be mindful of the following:")
     print("Please make sure that your answers are all in lowercase and that you don't leave any space (except between words) when answering")
     print("Please make sure that your keyboard can allow you to type with accents such as á and ã. Many answers require these and it is important for you to be able to type in order to not get flagged as a wrong answer. Additionally not writing with the accents is considered a spelling mistake so it helps you learn the different accents used in basic everyday language.")
     config.enter_to_continue()

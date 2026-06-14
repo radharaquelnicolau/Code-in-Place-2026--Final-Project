@@ -180,7 +180,7 @@ def ls_build_a_sentence():
         print(f"Unfortunately that is not correct. The correct answer is '{correct_answer}'. You now have {config.user_lives} lives and {config.user_xp}xp.")
 """ Lesson plan for locations and shoppings (ls)"""
 def ls_lesson_plan():
-    print("Now let's start with our fourth lesson!")
+    print("Welcome to our fourth lesson!")
     print("In this lesson, we will be learning about common locations and shoppings in Portuguese.")
     #introduces the user to the first lesson of unolingua
     config.enter_to_continue()
