@@ -73,10 +73,14 @@ def main():
     config.enter_to_continue()
     # Explanatory text for Unolingua
     greetings_and_farewell_lesson()
+    show_fun_fact()
     print("Now let's go to our next lesson!")
     numbers_and_dates_lesson()
+    show_fun_fact()
     print("Now let's go to our next lesson!")
+    show_fun_fact()
     directions_and_transportation_lesson()
+    show_fun_fact()
     print("Now let's go to our next lesson!")
     locations_and_shopping_lesson()
 
@@ -191,5 +195,6 @@ def show_fun_fact():
     print(f"{fact['fact']}")
     #prints the country and a fun fact
     print("=" * 50)
+    config.enter_to_continue()
 if __name__ == "__main__":
     main()
