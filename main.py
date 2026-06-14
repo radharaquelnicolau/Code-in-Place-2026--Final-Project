@@ -21,6 +21,49 @@ import directions_and_transportation
 import locations_and_shopping
 import common_phrases
 #these imports are the different language modules have the different exercise types for each module, they will be used to create the different exercises for the user to practice and learn the language.
+fun_facts = [
+    {
+        "country": "Portugal",
+        "fact": "Lisbon is older than Rome! The Phoenicians settled there around 1200 BCE, making it one of the oldest cities in Europe — Rome wasn't founded until around 753 BCE."
+    },
+    {
+        "country": "Portugal",
+        "fact": "Portugal produces over 70% of the world's cork exports and is home to the world's largest cork forest. Cork handbags, wallets and accessories are popular souvenirs!"
+    },
+    {
+        "country": "Portugal",
+        "fact": "Livraria Bertrand in Lisbon, founded in 1732, holds the Guinness World Record for the oldest operating bookstore in the world — it's still open today!"
+    },
+    {
+        "country": "Brazil",
+        "fact": "Brazil is the world's largest coffee producing country, filling an estimated 66 million 60kg bags of coffee in a single year. Coffee is central to daily life there!"
+    },
+    {
+        "country": "Brazil",
+        "fact": "Brazil has the largest Japanese population outside of Japan, mostly living in Sao Paulo. This has led to events like the annual Japan Festival, the biggest celebration of Japanese culture in Latin America!"
+    },
+    {
+        "country": "Brazil",
+        "fact": "Brazil's capital, Brasilia, was purpose-built and designed in the shape of an airplane when viewed from above. It only became the capital in 1961, replacing Rio de Janeiro."
+    },
+    {
+        "country": "Mozambique",
+        "fact": "Mozambique has over 40 languages spoken within its borders, making most Mozambicans naturally multilingual. Portuguese serves as the common language between all these different groups."
+    },
+    {
+        "country": "Mozambique",
+        "fact": "The rallying cry of Mozambique's independence movement — 'A luta continua!' (the struggle continues) — is still used by activist movements around the world fighting for equal rights today."
+    },
+    {
+        "country": "Angola",
+        "fact": "Music genres Kizomba, Kuduro and Semba all originated in Angola and are now enjoyed worldwide. Next time you hear Kizomba at a party, you'll know where it came from!"
+    },
+    {
+        "country": "The Lusophone World",
+        "fact": "Portuguese is spoken by around 260 million people across 4 continents and 9 countries, making it the most spoken language in the Southern Hemisphere — more than Spanish or French!"
+    }
+]
+#dictionary contatining fun facts that will show inbetween each lesson
 def main():
     print("Welcome to Unoligua, the language learning game! In this game, you will be able to practice and learn a new language through various exercises and activities. You will earn points for completing exercises and lose lives for making mistakes. The goal is to earn as many points as possible while keeping your lives intact. Let's get started!")
     config.enter_to_continue()
@@ -138,6 +181,15 @@ def locations_and_shopping_lesson():
     print(f"Congratulations on completing the first lesson! You have earned a total of {config.user_xp}xp")
     config.enter_to_continue()
 
-
+#function that displays fun facts 
+def show_fun_fact():
+    fact = random.choice(fun_facts)
+    #picks a random country for the fun fact
+    print("=" * 50)
+    #prints an equal sign 50 times to create a barrier and to differentiate from actual content
+    print(f"Did you know? [{fact['country']}]")
+    print(f"{fact['fact']}")
+    #prints the country and a fun fact
+    print("=" * 50)
 if __name__ == "__main__":
     main()
