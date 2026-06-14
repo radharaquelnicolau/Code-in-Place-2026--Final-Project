@@ -23,7 +23,7 @@ Like Duolingo, you earn XP for every correct answer and lose lives for mistakes.
 
 ## How to run it
 
-Make sure you have Python 3 installed, then install the one dependency:
+Make sure you have Python 3 installed, then install the one dependency(run this command at the terminal):
 
 pip install tabulate
 or
