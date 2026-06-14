@@ -1,19 +1,46 @@
 # Code in Place 2026 Final Project
-#### Unolingua
+## Unolingua
 
-For the Code in Place 2026 Final Project, I will be submitting **UNOLINGUA** which is very much a Duolingo dupe. Inspired by the quizlet exercise of week 6.
+Unolingua is a Duolingo-inspired command line program for learning Portuguese, 
+submitted as a final project for Code in Place 2026. It was inspired by the 
+Quizlet exercise from Week 6 of the course.
 
-## so what really IS Unolingua?
-So Unolingo is currently a *python command program* that teaches the basic **Portuguese(mainly from Portugal)**. You will learn the most basic vocabulary needed to qualify for A1 Portuguese. You will learn:
-1. Greetings and Farewell
+## What is Unolingua?
+
+Unolingua is a Python terminal program that teaches beginner Portuguese (European Portuguese). The vocabulary covered is aimed at A1 level and is organised into 5 lessons:
+
+1. Greetings and Farewells
 2. Numbers and Dates
 3. Directions and Transportation
 4. Locations and Shopping
-5. Common phrases
+5. Common Phrases
 
-Additionally you are going to learn some fun facts about portuguese and the countries that speak it.
-Each lesson will have a lesson sheet in which gives all of the vocabulary and explanations followed by 10 different exercises. 
+Between lessons, you will also learn fun facts about wider Portuguese-speaking world.
 
-Like Duolingo, you gain xp for each exercise you get right and lose lives. Every person starts with 7 lives and once your lives finish, you have to restart the lesson from the beginning. You xp adds and depening on how much xp you have, you get a personalised message at the end of the program.
+Each lesson begins with a vocabulary sheet and cultural notes, followed by 7 randomised exercises including multiple choice, fill in the blank, match the word and build a sentence.
 
-Thank you so much for looking at my project. Happy Learning!
+Like Duolingo, you earn XP for every correct answer and lose lives for mistakes. Each player starts with 5 lives — if you lose them all, the lesson restarts from the beginning. Your XP carries over across all lessons.
+
+## How to run it
+
+Make sure you have Python 3 installed, then install the one dependency:
+
+pip install tabulate
+
+Then run:
+
+python main.py
+
+## Notes
+
+- All answers must be typed in lowercase
+- Accented characters (á, ã, ê etc.) are required for correct answers
+- The program teaches European Portuguese — some vocabulary differs 
+  from Brazilian Portuguese
+
+## About
+
+Built by Radha Raquel Nicolau  as a final project for 
+[Code in Place 2026](https://codeinplace.stanford.edu/).
+
+Thank you for trying Unolingua. Happy learning!
