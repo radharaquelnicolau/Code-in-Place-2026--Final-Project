@@ -26,6 +26,8 @@ Like Duolingo, you earn XP for every correct answer and lose lives for mistakes.
 Make sure you have Python 3 installed, then install the one dependency:
 
 pip install tabulate
+or
+pip install -r requirements.txt
 
 Then run:
 
