@@ -185,7 +185,7 @@ def ls_lesson_plan():
     #introduces the user to the first lesson of unolingua
     config.enter_to_continue()
     #function to make sure that only by pressing enter, will the user continue
-    print("Here are the most common locations in Portuguese:")
+    print("Here are the some common locations in Portuguese:")
     for english, portuguese in locations.items():
         print(f"{english} : {portuguese}")
         #prints each english word with is portuguese translation
@@ -195,7 +195,7 @@ def ls_lesson_plan():
     config.enter_to_continue()
     print("Note: The letter 'a' not only is used as a definite article but also as preposition that links places, direction, time and final destination (similar to 'by' and 'to'). 'a' the preposition can be contracted with the definite articles 'o' and 'a' as follows: 'a + o' = 'ao' and 'a + a' = 'à'. These contractions are used in place of having these two in a sentence and is the most correct way of writing. ")
     config.enter_to_continue()
-    print("And here are the most common shoppings in Portuguese:")
+    print("And here are the most common shopping vocabulary in Portuguese:")
     for english, portuguese in shopping.items():
         print(f"{english} : {portuguese}")
     config.enter_to_continue()
